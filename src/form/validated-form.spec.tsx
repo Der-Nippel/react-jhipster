@@ -7,7 +7,6 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { useForm } from 'react-hook-form';
 
 import { ValidatedForm, ValidatedField, ValidatedInput } from './index';
-import { Input } from 'reactstrap';
 import { isEmail, ValidatedBlobField } from './validated-form';
 
 describe('ValidatedInput', () => {

@@ -78,7 +78,7 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
     });
   };
 
-  handleClose = e => {
+  handleClose = () => {
     this.setState({
       showModal: false,
     });
@@ -141,7 +141,7 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
           </span>
         </ProgressBar>
         {this.renderModal()}
-        <Button color="primary" size="sm" className="hand" onClick={this.openModal}>
+        <Button variant="primary" size="sm" className="hand" onClick={this.openModal}>
           Expand
         </Button>
       </div>
