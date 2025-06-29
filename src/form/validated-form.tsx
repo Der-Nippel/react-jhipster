@@ -103,11 +103,11 @@ ValidatedForm.displayName = 'ValidatedForm';
 
 export interface ValidatedInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  register: UseFormRegister<FieldValues> | undefined;
-  error: FieldError | undefined;
-  isTouched: boolean | undefined;
-  isDirty: boolean | undefined;
-  validate: RegisterOptions | undefined;
+  register?: UseFormRegister<FieldValues> | undefined;
+  error?: FieldError | undefined;
+  isTouched?: boolean | undefined;
+  isDirty?: boolean | undefined;
+  validate?: RegisterOptions | undefined;
   value?: any;
   tag?: any;
   defaultValue?: string | number | string[];
@@ -122,6 +122,7 @@ export interface ValidatedFieldProps extends ValidatedInputProps {
   tag?: any;
   check?: boolean;
   inputClass?: string;
+  rows?: number;
   inputTag?: React.ElementType;
 }
 
