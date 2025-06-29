@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextFormat } from '../../formatter';
-import { Progress, Button } from 'reactstrap';
+import { ProgressBar, Button } from 'react-bootstrap';
 import ThreadsModal from './threads-modal';
 
 export interface IJvmThreadsProps {
@@ -95,7 +95,7 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
         <p>
           <span>Runnable</span> {threadStats.threadDumpRunnable}
         </p>
-        <Progress animated min="0" value={threadStats.threadDumpRunnable} max={threadStats.threadDumpAll} color="success">
+        <ProgressBar animated now={threadStats.threadDumpRunnable} max={threadStats.threadDumpAll} color="success">
           <span>
             <TextFormat
               value={(threadStats.threadDumpRunnable * 100) / threadStats.threadDumpAll}
@@ -103,11 +103,11 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
               format={wholeNumberFormat}
             />
           </span>
-        </Progress>
+        </ProgressBar>
         <p>
           <span>Timed Waiting</span> ({threadStats.threadDumpTimedWaiting})
         </p>
-        <Progress animated min="0" value={threadStats.threadDumpTimedWaiting} max={threadStats.threadDumpAll} color="warning">
+        <ProgressBar animated now={threadStats.threadDumpTimedWaiting} max={threadStats.threadDumpAll} color="warning">
           <span>
             <TextFormat
               value={(threadStats.threadDumpTimedWaiting * 100) / threadStats.threadDumpAll}
@@ -115,11 +115,11 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
               format={wholeNumberFormat}
             />
           </span>
-        </Progress>
+        </ProgressBar>
         <p>
           <span>Waiting</span> ({threadStats.threadDumpWaiting})
         </p>
-        <Progress animated min="0" value={threadStats.threadDumpWaiting} max={threadStats.threadDumpAll} color="warning">
+        <ProgressBar animated now={threadStats.threadDumpWaiting} max={threadStats.threadDumpAll} color="warning">
           <span>
             <TextFormat
               value={(threadStats.threadDumpWaiting * 100) / threadStats.threadDumpAll}
@@ -127,11 +127,11 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
               format={wholeNumberFormat}
             />
           </span>
-        </Progress>
+        </ProgressBar>
         <p>
           <span>Blocked</span> ({threadStats.threadDumpBlocked})
         </p>
-        <Progress animated min="0" value={threadStats.threadDumpBlocked} max={threadStats.threadDumpAll} color="success">
+        <ProgressBar animated now={threadStats.threadDumpBlocked} max={threadStats.threadDumpAll} color="success">
           <span>
             <TextFormat
               value={(threadStats.threadDumpBlocked * 100) / threadStats.threadDumpAll}
@@ -139,7 +139,7 @@ export class JvmThreads extends React.Component<IJvmThreadsProps, IJvmThreadsSta
               format={wholeNumberFormat}
             />
           </span>
-        </Progress>
+        </ProgressBar>
         {this.renderModal()}
         <Button color="primary" size="sm" className="hand" onClick={this.openModal}>
           Expand

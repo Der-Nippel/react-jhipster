@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Modal, ModalHeader, ModalBody, ModalFooter, Button, Input, Badge, Row } from 'reactstrap';
+import { Table, Modal, ModalHeader, ModalBody, ModalFooter, Button, Badge, Row } from 'react-bootstrap';
 
 import ThreadItem from './thread-item';
 
